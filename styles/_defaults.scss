@@ -3,27 +3,37 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 a {
   text-decoration: none;
   color: inherit;
+}
+li {
+  list-style: none;
 }
 
 html {
   font-family: tbcx, sans-serif;
   color: $foreground;
   background-color: $background;
+  font-size: 14px;
+  line-height: 1.7;
+  @include desktop-lg {
+    font-size: 16px;
+  }
 }
 .container {
   width: 100%;
-  padding: 0 $side-padding-sm;
-  max-width: #{$container-width + 2 * $side-padding-sm};
   margin-left: auto;
   margin-right: auto;
+
+  padding: 0 $side-padding-sm;
+  max-width: $container-width + 2 * $side-padding-sm;
   @include tablet {
-    max-width: #{$container-width + 2 * $side-padding-md};
+    padding: 0 $side-padding-md;
+    max-width: $container-width + 2 * $side-padding-md;
   }
   @include desktop {
-    max-width: #{$container-width + 2 * $side-padding-lg};
+    padding: 0 $side-padding-lg;
+    max-width: $container-width + 2 * $side-padding-lg;
   }
 }
