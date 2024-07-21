@@ -122,6 +122,8 @@ const loadEventHandler = () => {
 
 const loadHeader = () => {
   window.addEventListener("load", loadEventHandler);
+  window.addEventListener("resize", loadEventHandler);
+  window.addEventListener("orientationchange", loadEventHandler);
   loadBurgerMenuToggler();
   loadBurgerMenuTabs();
   loadNav();
