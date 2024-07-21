@@ -69,17 +69,15 @@ const loadBurgerMenuToggler = () => {
   });
 };
 
+const setTabContentHeightsInBurgerMenu = () => {
+  [...document.querySelectorAll(HEADER_BURGERMENU_TABS_ITEM_LIST)].forEach(
+    (list) => {
+      const container = list.parentElement;
+      container.style.setProperty("--height", list.scrollHeight + "px");
+    }
+  );
+};
 const loadBurgerMenuTabs = () => {
-  const setHeightForTabContainers = () => {
-    [...document.querySelectorAll(HEADER_BURGERMENU_TABS_ITEM_LIST)].forEach(
-      (list) => {
-        const container = list.parentElement;
-        container.style.setProperty("--height", list.scrollHeight + "px");
-      }
-    );
-  };
-  setHeightForTabContainers();
-
   const getCurrentActive = () => {
     return document.querySelector(`${HEADER_BURGERMENU_TABS_ITEM}.active`);
   };
@@ -99,7 +97,14 @@ const loadBurgerMenuTabs = () => {
     }
   );
 };
-
+const setTabContentHeights = () => {
+  [...document.querySelectorAll(HEADER_NAV_TABCONTENT_CONTENT)].forEach(
+    (content) => {
+      const tabcontent = content.parentElement;
+      tabcontent.style.setProperty("--height", content.scrollHeight + "px");
+    }
+  );
+};
 const loadEventHandler = () => {
   // set dropdown height
   const header_nav_dropdown = document.querySelector(HEADER_NAV_DROPDOWN);
@@ -112,12 +117,8 @@ const loadEventHandler = () => {
     header_nav_dropdown_content.scrollHeight + "px"
   );
   // set tabcontent heights
-  [...document.querySelectorAll(HEADER_NAV_TABCONTENT_CONTENT)].forEach(
-    (content) => {
-      const tabcontent = content.parentElement;
-      tabcontent.style.setProperty("--height", content.scrollHeight + "px");
-    }
-  );
+  setTabContentHeights();
+  setTabContentHeightsInBurgerMenu();
 };
 
 const loadHeader = () => {
