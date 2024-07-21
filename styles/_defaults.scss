@@ -11,7 +11,8 @@ a {
 
 html {
   font-family: tbcx, sans-serif;
-  color: red;
+  color: $foreground;
+  background-color: $background;
 }
 .container {
   width: 100%;
