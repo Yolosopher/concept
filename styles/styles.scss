@@ -10,6 +10,15 @@
 @import "components/msgsection";
 @import "components/choose-group";
 @import "components/stats";
+@import "components/offers";
 @import "components/footer";
 
 @import "components/btn";
+
+:root {
+  --swiper-scrollbar-size: 2px;
+  --swiper-scrollbar-bg-color: #d1d5d6;
+  --swiper-scrollbar-drag-bg-color: #{$primary};
+  --swiper-scrollbar-bottom: 0;
+  --swiper-scrollbar-sides-offset: 0px;
+}

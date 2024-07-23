@@ -427,7 +427,7 @@ $dropdown-padding: 32px;
 
             &:hover,
             &:focus &:active {
-              color: #182cc0;
+              color: $primary;
               background-color: #eee;
             }
           }
