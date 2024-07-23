@@ -8,6 +8,13 @@
   overflow: hidden;
   &_container {
     padding-top: 32px;
+    padding-bottom: 36px;
+    @include tablet {
+      padding-bottom: 40px;
+    }
+    @include desktop {
+      padding-bottom: 60px;
+    }
     @include tablet-max {
       padding-left: 0;
       padding-right: 0;
