@@ -6,9 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
-const loadSliderOffers = () => {
+const loadSliders = () => {
   // init Swiper:
-  const swiper = new Swiper(".offers_swiper", {
+  const options = (className) => ({
     slidesPerView: 1.5,
     spaceBetween: 15,
     observer: true,
@@ -27,18 +27,24 @@ const loadSliderOffers = () => {
       },
     },
     scrollbar: {
-      el: ".swiper-scrollbar",
+      el: `.${className}_scrollbar`,
       dragSize: 300,
       // hide: true,
     },
     navigation: {
-      nextEl: ".offers_slider_nav_next",
-      prevEl: ".offers_slider_nav_prev",
-      disabledClass: "offers_slider_nav_disabled",
+      nextEl: `.${className}_slider_nav_next`,
+      prevEl: `.${className}_slider_nav_prev`,
+      disabledClass: `${className}_slider_nav_disabled`,
     },
     // configure Swiper to use modules
     modules: [Navigation, Scrollbar],
   });
+
+  const offersSwiper = new Swiper(".offers_swiper", options("offers"));
+  const productsSwiper = new Swiper(
+    ".sectionproducts_swiper",
+    options("sectionproducts")
+  );
 };
 
-export default loadSliderOffers;
+export default loadSliders;

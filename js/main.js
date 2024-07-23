@@ -1,7 +1,7 @@
 import loadFooter from "./components/footer";
 import loadHeader from "./components/header";
-import loadSliderOffers from "./components/offers-slider";
+import loadSliders from "./components/slider";
 
 loadHeader();
 loadFooter();
-loadSliderOffers();
+loadSliders();

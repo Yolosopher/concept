@@ -1,4 +1,5 @@
-.offers {
+.offers,
+.sectionproducts {
   overflow: hidden;
 
   padding-top: 36px;
@@ -85,7 +86,8 @@
     &:hover {
       box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
       background-color: white;
-      .offers_item_image {
+      .offers_item_image,
+      .sectionproducts_item_image {
         img {
           top: -2%;
         }

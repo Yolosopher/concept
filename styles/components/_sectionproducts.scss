@@ -1,0 +1,19 @@
+.sectionproducts {
+  &_item {
+    &_title {
+      @include line-clamp(2);
+      font-size: 14px;
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+    &_description {
+      @include line-clamp(4);
+      font-size: 12px;
+      line-height: 1.7;
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+  }
+}
