@@ -1,0 +1,131 @@
+.footer {
+  background-color: white;
+  padding-top: 36px;
+  @include tablet {
+    padding-top: 45px;
+  }
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    @include tablet {
+      padding-bottom: 50px;
+    }
+    .header_language {
+      display: flex;
+      height: 40px;
+      padding: 0 12px;
+      background-color: $background;
+      @include tablet {
+        background-color: #fff;
+      }
+      &:hover {
+        background-color: $border-color;
+      }
+    }
+    .logo {
+      color: $black;
+    }
+  }
+  &_bottom {
+    // background-color: $background;
+
+    @include tablet {
+      background-color: transparent;
+    }
+    &_content {
+      border-color: $border-color;
+      &_content {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        font-size: 14px;
+
+        @include tablet {
+          font-size: 12px;
+          padding-top: 28px;
+          padding-bottom: 28px;
+        }
+      }
+    }
+  }
+  &_mid {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 1024px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include desktop {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 16px;
+    }
+    .header_burgermenu_tabs {
+      flex: 1;
+      .header_burgermenu_tabs_item_list {
+        padding-top: 24px;
+      }
+      @include desktop {
+        grid-column: 1 / 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 16px;
+        font-size: 14px;
+        .header_burgermenu_tabs_item_tabname {
+          padding-top: 0;
+        }
+        .header_burgermenu_tabs_item_list {
+          padding-top: 20px;
+        }
+        .header_burgermenu_tabs_item_list {
+          gap: 20px;
+        }
+        .header_burgermenu_tabs_item_list_item,
+        .header_burgermenu_tabs_item_tabname {
+          font-size: 14px;
+        }
+        .container {
+          max-width: unset;
+          padding: unset;
+        }
+        .header_burgermenu_tabs_item_container {
+          height: auto !important;
+        }
+        svg {
+          display: none;
+        }
+      }
+      @include desktop-lg {
+        font-size: 16px;
+        .header_burgermenu_tabs_item_list_item,
+        .header_burgermenu_tabs_item_tabname {
+          font-size: 16px;
+        }
+      }
+    }
+    .header_burgermenu_contact,
+    .header_burgermenu_socials .container {
+      @include desktop {
+        padding-top: 0;
+      }
+    }
+    &_contact {
+      .container {
+        @include desktop {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .header_burgermenu_segment_title {
+        font-size: 16px;
+      }
+      .header_burgermenu_contact_content {
+        @include desktop {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

@@ -125,10 +125,13 @@ $dropdown-padding: 32px;
           transition: width 0.6s ease;
         }
 
-        &.active {
+        &.active,
+        &.current-url {
           &::after {
             width: 100%;
           }
+        }
+        &.active {
           .header_nav_tabcontent {
             transition-delay: 0.6s;
             opacity: 1;
@@ -431,47 +434,49 @@ $dropdown-padding: 32px;
         }
       }
     }
-    &_footer {
-      background-color: $background;
-      border-top: 1px solid $border-color;
-      @include tablet {
-        background-color: transparent;
-      }
-      &_content {
-        padding-top: 28px;
-        padding-bottom: 28px;
-        font-size: 12px;
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 32px;
-        @include tablet {
-          gap: 16px;
-          flex-direction: row;
-          justify-content: space-between;
-        }
-      }
-      &_copyright {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        .icon {
-          display: flex;
-          width: 21px;
-        }
-        .text {
-          font-weight: 400;
-          line-height: 1.7;
-        }
-      }
-      &_links {
-        display: flex;
-        gap: 35px;
-        align-items: center;
-      }
-    }
   }
 }
-
+.header_burgermenu_footer,
+.footer_bottom_content {
+  width: 100%;
+  background-color: $background;
+  border-top: 1px solid $border-color;
+  @include tablet {
+    background-color: transparent;
+  }
+  &_content {
+    width: 100%;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    @include tablet {
+      gap: 16px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &_copyright {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .icon {
+      display: flex;
+      width: 21px;
+    }
+    .text {
+      font-weight: 400;
+      line-height: 1.7;
+    }
+  }
+  &_links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+  }
+}
 .burger {
   cursor: pointer;
   position: relative;
