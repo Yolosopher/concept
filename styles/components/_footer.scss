@@ -111,6 +111,16 @@
         padding-top: 0;
       }
     }
+    .header_burgermenu_socials {
+      @include desktop {
+        margin-bottom: 45px;
+      }
+    }
+    .header_burgermenu_tabs_item {
+      @include desktop {
+        border-bottom: none;
+      }
+    }
     &_contact {
       .container {
         @include desktop {
