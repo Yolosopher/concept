@@ -4,7 +4,7 @@
   padding-top: 36px;
   padding-bottom: 36px;
 
-  @include custom(480px) {
+  @include custom(481px) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -24,7 +24,7 @@
     justify-content: space-between;
 
     margin-bottom: 20px;
-    @include custom(480px) {
+    @include custom(481px) {
       margin-bottom: 28px;
     }
     @include tablet {
@@ -58,7 +58,7 @@
   .swiper-wrapper {
     align-items: stretch;
     padding-bottom: 20px;
-    @include custom(480px) {
+    @include custom(481px) {
       padding-bottom: 38px;
     }
   }
