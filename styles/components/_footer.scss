@@ -52,7 +52,7 @@
   &_mid {
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: 1024px) {
+    @include desktop-max {
       padding-left: 0;
       padding-right: 0;
     }
