@@ -23,3 +23,17 @@ npm run sass // starts watching sass(scss) files
 ```
 npm run build
 ```
+
+# To preview whatever is built, you can use vite's built-in "preview" command:
+
+```
+npm run preview
+```
+
+## the only JS library used:
+
+- [swiperJS](https://swiperjs.com/)
+
+## CSS Preprocessor
+
+- SASS(SCSS)
