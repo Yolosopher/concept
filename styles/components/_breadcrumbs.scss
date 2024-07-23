@@ -1,0 +1,31 @@
+.breadcrumbs {
+  &_list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 4px;
+    align-items: center;
+    width: max-content;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &_item {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      width: max-content;
+      color: $foreground;
+
+      &:not(:last-child) {
+        &::after {
+          content: url("/icons/breadcrump-arrow.svg");
+          display: flex;
+          height: 16px;
+          width: 16px;
+        }
+      }
+      &:last-child {
+        font-weight: 500;
+        color: $black;
+      }
+    }
+  }
+}
