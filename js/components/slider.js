@@ -45,6 +45,7 @@ const loadSliders = () => {
     ".sectionproducts_swiper",
     options("sectionproducts")
   );
+  const awardsSwiper = new Swiper(".awards_swiper", options("awards"));
 };
 
 export default loadSliders;
