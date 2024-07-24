@@ -105,6 +105,7 @@ $closebtn-size-lg: 48px;
     padding-bottom: 32px;
     overflow: auto;
 
+    @include hide-default-scrollbars;
     @include custom(481px) {
       padding-top: 48px;
       padding-bottom: 48px;

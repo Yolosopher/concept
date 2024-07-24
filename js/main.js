@@ -2,6 +2,7 @@ import charCounter from "./components/char-counter";
 import loadContactForm, {
   loadContactFormListener,
 } from "./components/contactform";
+import loadCustomScrollbar from "./components/custom-scrollbar";
 import loadFooter from "./components/footer";
 import loadHeader from "./components/header";
 import loadKebabMenu from "./components/kebabmenu";
@@ -14,3 +15,4 @@ loadKebabMenu();
 loadContactForm();
 loadContactFormListener();
 charCounter();
+loadCustomScrollbar();

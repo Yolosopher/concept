@@ -1,0 +1,53 @@
+$scrollbar-width: 8px;
+$scrollbar-radius: 8px;
+$scrollbar-bg: #dededebf;
+$scrollbar-thumb-bg: #00000080;
+$scrollbar-thumb-radius: 4px;
+
+.cstm_scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $scrollbar-width;
+  height: 100%;
+  background: $scrollbar-bg;
+  border-radius: $scrollbar-radius;
+  z-index: 100;
+  user-select: none;
+  transition: opacity 0.25s ease-in-out;
+
+  opacity: 0;
+  &.scrolling {
+    opacity: 1;
+  }
+  &:hover {
+    opacity: 1 !important;
+  }
+  &_container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - #{$header-height});
+    height: calc(100dvh - #{$header-height});
+    overflow: hidden;
+  }
+  &_content {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+
+    @include hide-default-scrollbars;
+  }
+
+  &_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background: $scrollbar-thumb-bg;
+    border-radius: $scrollbar-thumb-radius;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+}

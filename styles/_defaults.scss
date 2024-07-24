@@ -35,6 +35,13 @@ html {
     font-size: 16px;
   }
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
+.cstm_scrollbar_content {
+  // scroll-behavior: smooth;
+}
 .container {
   width: 100%;
   margin-left: auto;
