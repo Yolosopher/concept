@@ -1,0 +1,173 @@
+$background-color: #424a4d;
+$background-color-hover: #424a4dcc;
+$size: 48px;
+$size-lg: 56px;
+
+.kebabmenu {
+  user-select: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 3;
+
+  display: flex;
+
+  width: $size;
+  height: $size;
+
+  @include custom(481px) {
+    width: $size-lg;
+    height: $size-lg;
+
+    bottom: 24px;
+    right: 24px;
+  }
+  @include desktop {
+    bottom: 32px;
+    right: 32px;
+  }
+  @include desktop-lg {
+    bottom: 40px;
+    right: 40px;
+  }
+  &_btn {
+    cursor: pointer;
+    background-color: $background-color;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: background-color 0.25s ease-in-out;
+    color: white;
+    &:hover {
+      background-color: $background-color-hover;
+    }
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.25s ease-in-out;
+    }
+    .x {
+      opacity: 0;
+    }
+    .kebab {
+      transition-delay: 0.25s;
+      opacity: 1;
+    }
+  }
+  &_menu {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    grid-gap: 8px;
+    gap: 8px;
+    opacity: 0;
+    width: 0;
+    transition: opacity 0.25s ease-in-out, width 0s ease-in-out 0.25s;
+    @include custom(481px) {
+      bottom: calc(100% + 12px);
+      grid-gap: 12px;
+      gap: 12px;
+    }
+    &_item {
+      position: relative;
+      user-select: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      width: $size;
+      height: $size;
+
+      background-color: white;
+      border: 1px solid $border-color;
+
+      transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+      @include custom(481px) {
+        width: $size-lg;
+        height: $size-lg;
+      }
+      .icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+      }
+      &_tooltip {
+        position: absolute;
+        right: calc(100% + 8px);
+        top: 50%;
+        transform: translateY(-50%);
+        height: 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        transition: opacity 0.25s ease-in-out, height 0s ease-in-out 0.25s;
+        color: white;
+        span {
+          white-space: nowrap;
+          background-color: $background-color;
+          border-radius: 6px;
+          padding: 0 12px;
+          font-size: 14px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+        &::after {
+          content: url("/icons/tooltip-right-side.svg");
+          width: max-content;
+          height: max-content;
+          display: inline-block;
+          width: 8px;
+          height: 24px;
+          margin-left: -2px;
+        }
+        @include custom(481px) {
+          right: calc(100% + 12px);
+        }
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      &:hover {
+        color: white;
+        background-color: $primary-hover;
+        .kebabmenu_menu_item_tooltip {
+          opacity: 1;
+          height: 40px;
+          transition: opacity 0.25s ease-in-out, height 0s ease-in-out 0s;
+        }
+      }
+    }
+  }
+  &.active {
+    .kebab {
+      transition-delay: 0s;
+      opacity: 0;
+    }
+    .x {
+      opacity: 1;
+      transition-delay: 0.25s;
+    }
+    .kebabmenu_menu {
+      width: auto;
+      opacity: 1;
+      overflow: visible;
+      transition: opacity 0.25s ease-in-out, width 0s ease-in-out 0s;
+    }
+  }
+}
