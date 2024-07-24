@@ -1,6 +1,7 @@
 module.exports = {
+  base: "/<REPO>/",
   build: {
-    outDir: "./docs",
+    outDir: "./dist",
     emptyOutDir: true, // also necessary
   },
 };
