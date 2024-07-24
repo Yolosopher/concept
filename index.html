@@ -1021,6 +1021,105 @@
       </li>
     </ul>
   </div>
+  <!-- contactform start -->
+  <div class="contactform">
+    <div class="contactform_overlay"></div>
+    <form id="contactform" class="contactform_content">
+      <div class="contactform_top contactform_container">
+        <h2 class="contactform_top_title">
+          დაგვიკავშირდით
+        </h2>
+        <div class="contactform_closebtn">
+          <svg data-v-e6dc0f1c="" width="25" height="24" viewBox="0 0 25 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path data-v-e6dc0f1c=""
+              d="M13.9142 11.9998L18.2072 7.70676C18.5982 7.31576 18.5982 6.68376 18.2072 6.29276C17.8162 5.90176 17.1842 5.90176 16.7933 6.29276L12.5002 10.5858L8.20725 6.29276C7.81625 5.90176 7.18425 5.90176 6.79325 6.29276C6.40225 6.68376 6.40225 7.31576 6.79325 7.70676L11.0862 11.9998L6.79325 16.2928C6.40225 16.6838 6.40225 17.3158 6.79325 17.7068C6.98825 17.9018 7.24425 17.9998 7.50025 17.9998C7.75625 17.9998 8.01225 17.9018 8.20725 17.7068L12.5002 13.4138L16.7933 17.7068C16.9882 17.9018 17.2443 17.9998 17.5002 17.9998C17.7562 17.9998 18.0122 17.9018 18.2072 17.7068C18.5982 17.3158 18.5982 16.6838 18.2072 16.2928L13.9142 11.9998Z"
+              fill="#555F62"></path>
+            <mask data-v-e6dc0f1c="" id="mask0_124_107351" maskUnits="userSpaceOnUse" x="6" y="5" width="13" height="13"
+              style="mask-type: luminance;">
+              <path data-v-e6dc0f1c=""
+                d="M13.9142 11.9998L18.2072 7.70676C18.5982 7.31576 18.5982 6.68376 18.2072 6.29276C17.8162 5.90176 17.1842 5.90176 16.7933 6.29276L12.5002 10.5858L8.20725 6.29276C7.81625 5.90176 7.18425 5.90176 6.79325 6.29276C6.40225 6.68376 6.40225 7.31576 6.79325 7.70676L11.0862 11.9998L6.79325 16.2928C6.40225 16.6838 6.40225 17.3158 6.79325 17.7068C6.98825 17.9018 7.24425 17.9998 7.50025 17.9998C7.75625 17.9998 8.01225 17.9018 8.20725 17.7068L12.5002 13.4138L16.7933 17.7068C16.9882 17.9018 17.2443 17.9998 17.5002 17.9998C17.7562 17.9998 18.0122 17.9018 18.2072 17.7068C18.5982 17.3158 18.5982 16.6838 18.2072 16.2928L13.9142 11.9998Z"
+                fill="white"></path>
+            </mask>
+            <g data-v-e6dc0f1c="" mask="url(#mask0_124_107351)"></g>
+          </svg>
+        </div>
+      </div>
+      <div class="contactform_mid contactform_container">
+        <p class="contactform_mid_title">დაგვიკავშირდით</p>
+        <div class="contactform_mid_fields">
+          <div class="formfield">
+            <div class="formfield_inputbox">
+              <input type="text" id="fullname" placeholder=" " autocomplete="off" required>
+              <div class="formfield_label" for="fullname">სახელი და გვარი</div>
+            </div>
+            <div class="formfield_message">აუცილებელი ველი</div>
+          </div>
+          <div class="formfield">
+            <div class="formfield_inputbox">
+              <input type="number" id="telnumber" placeholder=" " autocomplete="off" required>
+              <div class="formfield_label" for="telnumber">ნომერი</div>
+            </div>
+            <div class="formfield_message">აუცილებელი ველი</div>
+          </div>
+          <div class="formfield">
+            <div class="formfield_inputbox">
+              <input type="email" id="email" placeholder=" " autocomplete="off" required>
+              <div class="formfield_label" for="email">ელ.პოსტა</div>
+            </div>
+            <div class="formfield_message">აუცილებელი ველი</div>
+          </div>
+          <div class="formfield">
+            <div class="formfield_inputbox">
+              <input type="text" id="company" placeholder=" " autocomplete="off">
+              <div class="formfield_label" for="company">კომპანია</div>
+            </div>
+            <div class="formfield_message">აუცილებელი ველი</div>
+          </div>
+          <div class="formfield">
+            <div class="formfield_textareabox">
+              <textarea id="text" placeholder=" " required maxlength="100"></textarea>
+              <div class="formfield_charcounter" data-maxlength="100">0 / 100</div>
+              <div class="formfield_label" for="text">ტექსტი</div>
+            </div>
+            <div class="formfield_message">აუცილებელი ველი</div>
+
+          </div>
+        </div>
+        <div class="formfield">
+          <div class="contactform_agree checkbox">
+            <input type="checkbox" name="agreeterms" id="agreeterms" required>
+            <label for="agreeterms" class="checkbox_icon">
+            </label>
+            <div class="checkbox_text">ვეთანხმები <span>წესებსა და პირობებს</span></div>
+          </div>
+          <div class="formfield_message">
+            აუცილებელი ველი
+          </div>
+        </div>
+        <div class="contactform_recaptcha">
+          <div class="g-recaptcha" data-sitekey="6LfJaBcqAAAAABLacKlJG-y9y8ch56omtsIdZPZ7"
+            data-action="CONTACT_FORM_ACTION" data-callback="onRecaptchaSuccess"></div>
+          <br />
+        </div>
+
+      </div>
+      <div class="contactform_bottom contactform_container">
+        <button type="submit" class="contactform_submit btn primary" disabled>
+          <div class="icon">
+            <svg data-v-67f54ace="" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path data-v-67f54ace=""
+                d="M9.7987 2.86675L14.4654 7.53341C14.732 7.80008 14.732 8.20008 14.4654 8.46675L9.7987 13.1334C9.53203 13.4001 9.13203 13.4001 8.86537 13.1334C8.5987 12.8667 8.5987 12.4667 8.86537 12.2001L12.3987 8.66675H1.9987C1.5987 8.66675 1.33203 8.40008 1.33203 8.00008C1.33203 7.60008 1.5987 7.33341 1.9987 7.33341H12.3987L8.86537 3.80008C8.73203 3.66675 8.66536 3.53341 8.66536 3.33341C8.66536 3.13341 8.73203 3.00008 8.86537 2.86675C9.13203 2.60008 9.53203 2.60008 9.7987 2.86675Z">
+              </path>
+            </svg>
+          </div>
+          <span class="text">გაგზავნა</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
   <!-- footer start -->
   <footer class="footer">
     <div class="footer_top container">
@@ -1290,7 +1389,18 @@
       </div>
     </div>
   </footer>
+  <!-- scripts -->
+  <script>
+    const eventTarget = new EventTarget();
+    function onloadCallback() {
+      eventTarget.dispatchEvent(new Event('recaptchaLoaded'));
+    }
+    function onRecaptchaSuccess() {
+      eventTarget.dispatchEvent(new Event('recaptchaSuccess'))
+    };
+  </script>
   <script type="module" src="./js/main.js"></script>
+  <script async src="https://www.google.com/recaptcha/api.js?onload=onloadCallback"></script>
 </body>
 
 </html>

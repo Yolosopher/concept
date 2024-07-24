@@ -107,7 +107,7 @@
       transition: background-position 0.25s ease-in-out;
       display: flex;
       &:hover {
-        background-color: #f9fafa;
+        background-color: $background;
       }
     }
   }

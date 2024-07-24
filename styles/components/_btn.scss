@@ -48,4 +48,12 @@
       }
     }
   }
+  &[disabled] {
+    cursor: default !important;
+    background: #e9ebec !important;
+    color: #a5aaac !important;
+    &::after {
+      background-color: #e9ebec !important;
+    }
+  }
 }

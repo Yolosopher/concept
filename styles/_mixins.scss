@@ -50,3 +50,18 @@ $desktop-lg-size: 1440px;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+// hide input number arrows
+@mixin hide-number-input-arrows {
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    appearance: textfield;
+  }
+}

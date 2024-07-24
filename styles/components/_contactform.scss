@@ -1,0 +1,301 @@
+$contactform_width: 600px;
+$overlay_color: #14171980;
+$closebtn-size: 32px;
+$closebtn-size-lg: 48px;
+
+.contactform {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  opacity: 0;
+  transform: translateX(-300%);
+  transition: opacity 0.25s ease-in-out, transform 0s ease-in-out 0.25s;
+
+  &_container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    @include custom(481px) {
+      padding-left: 56px;
+      padding-right: 56px;
+    }
+  }
+
+  &_overlay {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: $overlay_color;
+  }
+  &_content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: white;
+    @include tablet {
+      max-width: $contactform_width;
+    }
+  }
+
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $border-color;
+    height: 81px;
+    @include custom(481px) {
+      height: 113px;
+    }
+    &_title {
+      color: $black;
+      line-height: 1.5;
+      font-weight: bold;
+
+      font-size: 14px;
+      @include custom(481px) {
+        font-size: 24px;
+      }
+    }
+  }
+  &_closebtn {
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: $border-color;
+    width: $closebtn-size;
+    height: $closebtn-size;
+    transition: background-color 0.25s ease-in-out;
+
+    @include custom(481px) {
+      width: $closebtn-size-lg;
+      height: $closebtn-size-lg;
+    }
+    &:hover {
+      background-color: #eef1f180;
+    }
+  }
+
+  &_mid {
+    height: 1px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+    gap: 30px;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow: auto;
+
+    @include custom(481px) {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+    &_title {
+    }
+    &_fields {
+      grid-row-gap: 16px;
+      flex-direction: column;
+      display: flex;
+    }
+  }
+  &_bottom {
+    height: 114px;
+    width: 100%;
+    border: 1px solid $border-color;
+
+    display: flex;
+    align-items: center;
+  }
+  &_submit {
+    width: 100% !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.33 !important;
+  }
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.25s ease-in-out, transform 0s ease-in-out 0s;
+    .contactform_overlay {
+    }
+  }
+}
+
+$input-bg: #f6f8f8;
+$input-radius: 4px;
+$input-gap: 4px;
+$focus-border-color: $border-color;
+$border-error: #da1a1c;
+
+.formfield {
+  --border-color: #{$focus-border-color};
+  display: flex;
+  flex-direction: column;
+  grid-gap: $input-gap;
+  gap: $input-gap;
+  color: $black;
+  &_textareabox {
+    height: auto !important;
+    overflow: unset !important;
+    textarea {
+      position: relative !important;
+      overflow: auto;
+      resize: vertical;
+      transition: none !important;
+    }
+  }
+  &_inputbox,
+  &_textareabox {
+    cursor: default;
+    overflow: hidden;
+    position: relative;
+    color: inherit;
+    font-size: 14px;
+    height: 56px;
+    display: flex;
+    background-color: $input-bg;
+    border-radius: $input-radius;
+    &:focus-within {
+      .formfield_label {
+        transform: scale(0.8) !important;
+        top: 6px !important;
+      }
+    }
+    input {
+      @include hide-number-input-arrows;
+    }
+    textarea {
+      min-height: 112px;
+      height: auto;
+    }
+    input,
+    textarea {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      font-size: inherit;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      padding: 0 12px;
+      padding-top: 22px;
+      border-radius: $input-radius;
+      border: 1px solid var(--border-color);
+      transition: 0.25s ease-in-out;
+      &:focus {
+        border-color: $primary-hover;
+      }
+      &:not(:placeholder-shown) ~ .formfield_label {
+        transform: scale(0.8);
+        top: 6px;
+      }
+      &[required] ~ .formfield_label {
+        &::after {
+          content: " *";
+          font-size: 14px;
+          font-weight: 400;
+          display: inline;
+          color: $border-error;
+        }
+      }
+    }
+  }
+  &_label {
+    white-space: nowrap;
+    position: absolute;
+    z-index: 1;
+    left: 12px;
+    color: #6f787b;
+    font-size: 14px;
+    font-weight: 400;
+    transform: translateY(-50%) scale(1);
+    top: 28px;
+    transform-origin: 0% 0%;
+    transition: all 0.25s ease-in-out;
+  }
+  &_message {
+    display: none;
+    color: var(--border-color);
+  }
+  &.error {
+    --border-color: #{$border-error};
+    .formfield_message {
+      display: block;
+    }
+  }
+  &_charcounter {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: $foreground;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  &_icon {
+    cursor: pointer;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    background-color: $background;
+    height: 18px;
+    border: 1px solid #bcc1c2;
+    transition: background-color 0.25s ease-in-out,
+      border-color 0.25s ease-in-out;
+    &::after {
+      content: "";
+      display: flex;
+      width: 10px;
+      height: 10px;
+      background-image: url("/icons/checkbox.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  input {
+    display: none;
+    &:checked + .checkbox_icon {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+  &_text {
+    font-size: 12px;
+    color: $foreground;
+
+    font-weight: 400;
+    cursor: pointer;
+    span {
+      color: $black;
+    }
+  }
+}
