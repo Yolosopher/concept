@@ -237,6 +237,7 @@ $border-error: #da1a1c;
     transition: all 0.25s ease-in-out;
   }
   &_message {
+    font-size: 12px;
     display: none;
     color: var(--border-color);
   }
