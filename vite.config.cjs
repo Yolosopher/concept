@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/<REPO>/",
+  base: "/concept/",
   build: {
     outDir: "./dist",
     emptyOutDir: true, // also necessary
