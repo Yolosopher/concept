@@ -12,7 +12,9 @@ const loadSliders = () => {
     slidesPerView: 1.5,
     spaceBetween: 15,
     observer: true,
+    grabCursor: true,
     resizeObserver: true,
+    touchEventsTarget: "container",
     breakpoints: {
       0: {
         slidesPerView: 1.5,
