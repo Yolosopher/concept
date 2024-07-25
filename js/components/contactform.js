@@ -131,7 +131,9 @@ const validations = {
         formfield.classList.add("error");
         formfield_message.textContent = message;
       }
-    } else if (!value.includes("@")) {
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+    ) {
       const message = "Please enter a valid email address";
       errors.fieldsMap.set(EMAIL_ID, message);
       if (!skipDomUpdate) {
@@ -256,7 +258,7 @@ const retrieveAndValidateData = () => {
 // add input listeners to form fields
 const loadInputListeners = () => {
   addListenerToInput(FULLNAME_ID, validations.fullname);
-  addListenerToInput(EMAIL_ID, validations.fullname);
+  addListenerToInput(EMAIL_ID, validations.email);
   addListenerToInput(TEXT_ID, validations.text);
   addListenerToInput(PHONE_ID, validations.phone);
   addListenerToInput(AGREE_ID, validations.agreeterms, true);
@@ -265,7 +267,7 @@ const loadInputListeners = () => {
   // run validations on all fields
 
   runValidationOnInput(FULLNAME_ID, validations.fullname);
-  runValidationOnInput(EMAIL_ID, validations.fullname);
+  runValidationOnInput(EMAIL_ID, validations.email);
   runValidationOnInput(TEXT_ID, validations.text);
   runValidationOnInput(PHONE_ID, validations.phone);
   runValidationOnInput(AGREE_ID, validations.agreeterms, true);

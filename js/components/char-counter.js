@@ -16,7 +16,7 @@ const charCounter = () => {
       const valueLength = e.target.value.length;
       field.textContent = `${valueLength} / ${maxLength}`;
     };
-    input?.addEventListener("change", changeHandler);
+    input?.addEventListener("input", changeHandler);
   });
 };
 
