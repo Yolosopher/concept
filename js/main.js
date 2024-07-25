@@ -2,6 +2,7 @@ import charCounter from "./components/char-counter";
 import loadContactForm, {
   loadContactFormListener,
 } from "./components/contactform";
+import loadCookieHandler from "./components/cookies-handler";
 import loadCustomScrollbar from "./components/custom-scrollbar";
 import loadFooter from "./components/footer";
 import loadHeader from "./components/header";
@@ -16,3 +17,4 @@ loadContactForm();
 loadContactFormListener();
 charCounter();
 loadCustomScrollbar();
+loadCookieHandler();

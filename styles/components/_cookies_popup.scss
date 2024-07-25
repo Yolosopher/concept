@@ -1,0 +1,49 @@
+.cookies {
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 36px 40px -15px #0c2b4312;
+  z-index: 1000;
+
+  width: 100%;
+
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 24px;
+  max-width: 700px;
+  bottom: -500px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, bottom 0s ease-in-out 0.5s;
+  @include tablet {
+    padding: 24px 32px;
+    max-width: 730px;
+  }
+  &_icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_acceptbtn {
+    span {
+      margin-top: 2px;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    bottom: 24px;
+    transition: opacity 0.5s ease-in-out, bottom 0s ease-in-out 0s;
+    @include tablet {
+      bottom: 66px;
+    }
+  }
+}

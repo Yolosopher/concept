@@ -198,6 +198,8 @@ $dropdown-padding: 32px;
     }
   }
   &_subscribe {
+    cursor: pointer;
+    text-transform: uppercase;
     white-space: nowrap;
     color: $primary;
     transition: color 0.25s ease-in-out;
