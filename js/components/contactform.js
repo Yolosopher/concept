@@ -27,7 +27,6 @@ const validateCaptcha = () => {
   const recaptcha_token_textarea = document.getElementById(
     RECAPTCHA_TOKEN_TEXTAREA_ID
   );
-  console.log(recaptcha_token_textarea);
   if (recaptcha_token_textarea?.value) {
     return {
       success: true,
@@ -79,13 +78,12 @@ const checkIfSubmitAllowed = () => {
   const submitBtn = document.querySelector(CONTACTFORM_SUBMITBTN);
   if (!errors.isCaptchaLoaded) {
     submitBtn.disabled = true;
-    console.log("captcha not loaded");
     return;
   }
-  console.log(errors.fieldsMap.size);
-  if (errors.fieldsMap.size === 1) {
-    console.log(errors.fieldsMap.entries());
-  }
+  // console.log(errors.fieldsMap.size);
+  // if (errors.fieldsMap.size === 1) {
+  //   console.log(errors.fieldsMap.entries());
+  // }
   if (errors.fieldsMap.size > 0) {
     submitBtn.disabled = true;
   } else {
@@ -247,7 +245,6 @@ const retrieveAndValidateData = () => {
     });
   }
   if (errors.length > 0) {
-    console.log(errors);
     return {
       success: false,
       errors,
@@ -277,13 +274,11 @@ const loadInputListeners = () => {
 // add recaptcha loaded listener
 eventTarget?.addEventListener("recaptchaLoaded", () => {
   errors.isCaptchaLoaded = true;
-  console.log("recaptchaLoaded occurred");
 
   loadInputListeners();
 });
 
 eventTarget?.addEventListener("recaptchaSuccess", () => {
-  console.log("lisstenting to recaptchaSuccess");
   runValidationOnInput(RECAPTCHA_TOKEN_TEXTAREA_ID, validations.recaptcha);
 });
 
