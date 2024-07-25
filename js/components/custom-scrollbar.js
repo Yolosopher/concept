@@ -63,7 +63,7 @@ const CONTACTFORM_MID_CONTAINER = ".contactform_mid";
 
 const loadScrollBars = () => {
   loadCustomScrollbar(PAGESCROLLBAR_CONTAINER);
-  loadCustomScrollbar(CONTACTFORM_MID_CONTAINER);
+  // loadCustomScrollbar(CONTACTFORM_MID_CONTAINER);
 };
 
 export default loadScrollBars;
