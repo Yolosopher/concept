@@ -6,7 +6,7 @@ This is Vite Vanila JS project for TBC-concept website cloning
 npm install
 ```
 
-Then run it in dev mode:
+Then comment out this line `base: "/concept"` inside vite.config.cjs and then run in dev mode:
 
 ```
 npm run dev
