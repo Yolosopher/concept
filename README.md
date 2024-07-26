@@ -2,6 +2,8 @@ This is Vite Vanila JS project for TBC-concept website cloning
 
 # To run the development server, first install dependencies:
 
+**(If you're trying to run dev server using Windows, it is recommended to delete package-lock.json file in root and then run npm install)**
+
 ```
 npm install
 ```
